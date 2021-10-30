@@ -43,13 +43,11 @@ struct PlaceholderView: View {
             if let titleText = titleText {
                 Text(titleText)
                     .font(.title2)
-                    .multilineTextAlignment(.center)
             }
             
             if let messageText = messageText {
                 Text(messageText)
                     .font(.body)
-                    .multilineTextAlignment(.center)
             }
             
             if let buttonTitle = buttonTitle,
@@ -59,6 +57,7 @@ struct PlaceholderView: View {
                     .buttonStyle(.borderedProminent)
             }
         }
+        .multilineTextAlignment(.center)
     }
 }
 
