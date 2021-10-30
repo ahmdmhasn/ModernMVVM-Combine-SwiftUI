@@ -11,16 +11,30 @@ import SwiftUI
 ///
 struct PlaceholderView: View {
     
-    var imageName: String?
+    /// Image
+    ///
+    var image: Image?
+    
+    /// Title text, Optional
+    ///
     var titleText: String?
+    
+    /// Message text. Optional.
+    ///
     var messageText: String?
+    
+    /// Button TItle. Button will be hidden if buttonTitle or buttonAction is nil.
+    ///
     var buttonTitle: String?
+    
+    /// Button Action. Button will be hidden if buttonTitle or buttonAction is nil
+    ///
     var buttonAction: (() -> Void)?
     
     var body: some View {
         VStack(spacing: 10) {
-            if let imageName = imageName {
-                Image(systemName: imageName)
+            if let image = image {
+                image
                     .resizable()
                     .scaledToFit()
                     .frame(maxWidth: 150, maxHeight: 150)
@@ -28,7 +42,7 @@ struct PlaceholderView: View {
             
             if let titleText = titleText {
                 Text(titleText)
-                    .font(.title)
+                    .font(.title2)
                     .multilineTextAlignment(.center)
             }
             
@@ -50,7 +64,7 @@ struct PlaceholderView: View {
 
 struct PlaceholderView_Previews: PreviewProvider {
     static var previews: some View {
-        PlaceholderView(imageName: "rectangle.on.rectangle",
+        PlaceholderView(image: Image(systemName: "rectangle.on.rectangle"),
                         titleText: "Error",
                         messageText: "Unable to load data", buttonTitle: "Button") { }
     }

@@ -13,14 +13,20 @@ struct ListItem: Identifiable {
 }
 
 #if DEBUG
+import Combine
+
 extension ListItem {
     
-    static let preview: [ListItem] = {
+    static let preview: AnyPublisher<[ListItem], Never> = {
         return [
-            .init(title: "Hello 1"),
-            .init(title: "Hello 2"),
-            .init(title: "Hello 3"),
+            ListItem(title: "Hello 1"),
+            ListItem(title: "Hello 2"),
+            ListItem(title: "Hello 3"),
         ]
+            .publisher
+            .collect()
+            .delay(for: 2, scheduler: DispatchQueue.main)
+            .eraseToAnyPublisher()
     }()
 }
 #endif

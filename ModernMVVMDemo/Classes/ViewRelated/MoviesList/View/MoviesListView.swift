@@ -20,34 +20,30 @@ struct MoviesListView: View {
         }
         .onAppear {
             viewModel.send(.onAppear)
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                viewModel.send(.onAppear)
-            }
         }
     }
+}
+
+/// Content View Builder
+///
+private extension MoviesListView {
     
-    @ViewBuilder
-    private var content: some View {
+    @ViewBuilder var content: some View {
         switch viewModel.state {
         case .loading:
-//            Spinner(isAnimating: .constant(true))
-            list(of: [])
+            Spinner(isAnimating: .constant(true))
         case .error(let error):
-            Text(error.localizedDescription)
+            placeholderView(message: error.localizedDescription)
         case .loaded(let movies):
             list(of: movies)
         case .idle:
             EmptyView()
         case .empty:
-            PlaceholderView(imageName: "rectangle.on.rectangle",
-                            messageText: "No results found!", buttonTitle: "Reload") {
-                
-            }
+            placeholderView(message: "No results found!")
         }
     }
     
-    private func list(of movies: [ListItem]) -> some View {
+    func list(of movies: [ListItem]) -> some View {
         List {
             Section {
                 ForEach(movies) { movie in
@@ -60,8 +56,16 @@ struct MoviesListView: View {
             } footer: {
                 Spinner(isAnimating: .constant(viewModel.state.isLoading))
                     .xCentered()
-                    
             }
+        }
+    }
+    
+    func placeholderView(title: String = "Error", message: String) -> some View {
+        PlaceholderView(image: Image(systemName: "rectangle.on.rectangle"),
+                        titleText: title,
+                        messageText: message,
+                        buttonTitle: "Reload") {
+            viewModel.send(.onReload)
         }
     }
 }

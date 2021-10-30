@@ -62,9 +62,19 @@ private extension MoviesListViewModel {
                 return state
             }
         case .error:
-            return state
+            switch event {
+            case .onReload:
+                return .loading
+            default:
+                return state
+            }
         case .empty:
-            return state
+            switch event {
+            case .onReload:
+                return .loading
+            default:
+                return state
+            }
         }
     }
 }
@@ -79,8 +89,8 @@ private extension MoviesListViewModel {
                 return Empty().eraseToAnyPublisher()
             }
             
-            return Just(Event.onMoviesLoaded(ListItem.preview))
-                .delay(for: 2, scheduler: DispatchQueue.main)
+            return ListItem.preview
+                .map { Event.onMoviesLoaded($0) }
                 .catch { Just(Event.onFailedToLoadMovies($0)) }
                 .eraseToAnyPublisher()
         }
@@ -115,6 +125,7 @@ extension MoviesListViewModel {
 
     enum Event {
         case onAppear
+        case onReload
         case onSelectMovie(Int)
         case onMoviesLoaded([ListItem])
         case onFailedToLoadMovies(Error)
