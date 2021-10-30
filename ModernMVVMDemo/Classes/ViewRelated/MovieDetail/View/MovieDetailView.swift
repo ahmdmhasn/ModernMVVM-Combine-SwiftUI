@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+/// MovieDetailView
+/// 
 struct MovieDetailView: View {
     
     @ObservedObject var viewModel: MovieDetailViewModel
@@ -19,9 +21,38 @@ struct MovieDetailView: View {
     
     var body: some View {
         NavigationView {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            Text("Showing details of movie with id: \(viewModel.movieID)")
         }
         .navigationTitle(viewModel.title)
+    }
+}
+
+/// View Builders
+///
+private extension MovieDetailView {
+   
+    @ViewBuilder
+    var content: some View {
+        switch viewModel.state {
+        case .idle:
+            Color.clear
+        case .loading:
+            Spinner()
+        case .loaded(let details):
+            detailsView(details: details)
+        case .failure(let error):
+            placeholderView(message: error.localizedDescription)
+        }
+    }
+    
+    func detailsView(details: MovieDetail) -> some View {
+        EmptyView()
+    }
+    
+    func placeholderView(message: String) -> some View {
+        PlaceholderView(image: .exclamationMark,
+                        titleText: "Error",
+                        messageText: message)
     }
 }
 

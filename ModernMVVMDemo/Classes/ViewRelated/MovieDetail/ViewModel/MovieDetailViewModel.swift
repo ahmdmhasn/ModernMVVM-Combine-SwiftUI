@@ -14,11 +14,14 @@ class MovieDetailViewModel: ObservableObject {
     @Published private(set) var state: State
     @Published private(set) var title = String()
     
+    let movieID: Int
+    
     private let input = PassthroughSubject<Event, Never>()
     private var bag = Set<AnyCancellable>()
     
     
     init(movieID: Int) {
+        self.movieID = movieID
         self.state = .idle(movieID)
         
         Publishers.system(initial: state,
