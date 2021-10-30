@@ -89,7 +89,8 @@ private extension MoviesListViewModel {
                 return Empty().eraseToAnyPublisher()
             }
             
-            return MovieListItem.preview
+            return Remote().popularMovies()
+                .map { list in list.map(MovieListItem.init) }
                 .map { Event.onMoviesLoaded($0) }
                 .catch { Just(Event.onFailedToLoadMovies($0)) }
                 .eraseToAnyPublisher()
@@ -100,6 +101,15 @@ private extension MoviesListViewModel {
         Feedback {
             _ in input
         }
+    }
+}
+
+// MARK: MovieListItem+DTO
+//
+extension MovieListItem {
+    
+    init(dto: MovieItemDTO) {
+        self.title = dto.title
     }
 }
 
