@@ -48,7 +48,7 @@ private extension MoviesListView {
             Section {
                 ForEach(movies) { movie in
                     NavigationLink {
-                        
+                        MovieDetailView(movieID: movie.id)
                     } label: {
                         MovieListItemView(item: movie)
                     }

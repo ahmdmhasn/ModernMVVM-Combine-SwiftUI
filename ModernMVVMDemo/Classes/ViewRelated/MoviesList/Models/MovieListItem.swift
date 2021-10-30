@@ -8,7 +8,7 @@
 import Foundation
 
 struct MovieListItem: Identifiable {
-    let id = UUID().uuidString
+    let id = Int.random(in: 0...10000)
     let title: String
 }
 

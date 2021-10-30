@@ -19,6 +19,9 @@
 		02D3F535272D7A450070EF5E /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D3F534272D7A450070EF5E /* Spinner.swift */; };
 		02D3F53D272D96280070EF5E /* MovieListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D3F53C272D96280070EF5E /* MovieListItemView.swift */; };
 		02D3F53F272D97660070EF5E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D3F53E272D97660070EF5E /* CardView.swift */; };
+		02D3F543272D9B390070EF5E /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D3F542272D9B390070EF5E /* MovieDetailViewModel.swift */; };
+		02D3F546272D9B9D0070EF5E /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D3F545272D9B9D0070EF5E /* MovieDetail.swift */; };
+		02D3F549272DC05A0070EF5E /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D3F548272DC05A0070EF5E /* MovieDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,9 @@
 		02D3F534272D7A450070EF5E /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		02D3F53C272D96280070EF5E /* MovieListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListItemView.swift; sourceTree = "<group>"; };
 		02D3F53E272D97660070EF5E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		02D3F542272D9B390070EF5E /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
+		02D3F545272D9B9D0070EF5E /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
+		02D3F548272DC05A0070EF5E /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 		02D3F536272D8BA20070EF5E /* ViewRelated */ = {
 			isa = PBXGroup;
 			children = (
+				02D3F540272D9B230070EF5E /* MovieDetail */,
 				02D3F531272D5D880070EF5E /* MoviesList */,
 			);
 			path = ViewRelated;
@@ -169,6 +176,40 @@
 				02993766272C3C5E0021EB6B /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		02D3F540272D9B230070EF5E /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				02D3F547272DC04B0070EF5E /* View */,
+				02D3F544272D9B8F0070EF5E /* Model */,
+				02D3F541272D9B2A0070EF5E /* ViewModel */,
+			);
+			path = MovieDetail;
+			sourceTree = "<group>";
+		};
+		02D3F541272D9B2A0070EF5E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				02D3F542272D9B390070EF5E /* MovieDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		02D3F544272D9B8F0070EF5E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				02D3F545272D9B9D0070EF5E /* MovieDetail.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		02D3F547272DC04B0070EF5E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				02D3F548272DC05A0070EF5E /* MovieDetailView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,9 +285,12 @@
 				02993776272C49BE0021EB6B /* MovieListItem.swift in Sources */,
 				02D3F535272D7A450070EF5E /* Spinner.swift in Sources */,
 				02993763272C3C5C0021EB6B /* ModernMVVMDemoApp.swift in Sources */,
+				02D3F546272D9B9D0070EF5E /* MovieDetail.swift in Sources */,
 				02D3F53D272D96280070EF5E /* MovieListItemView.swift in Sources */,
 				02D3F53F272D97660070EF5E /* CardView.swift in Sources */,
 				02993778272C4ABB0021EB6B /* MoviesListView.swift in Sources */,
+				02D3F543272D9B390070EF5E /* MovieDetailViewModel.swift in Sources */,
+				02D3F549272DC05A0070EF5E /* MovieDetailView.swift in Sources */,
 				02993772272C3CB50021EB6B /* Feedback.swift in Sources */,
 				0299377A272C506F0021EB6B /* PlaceholderView.swift in Sources */,
 				02D3F530272D5D410070EF5E /* View+Helpers.swift in Sources */,
