@@ -50,14 +50,16 @@ private extension MoviesListView {
                     NavigationLink {
                         
                     } label: {
-                        Text(movie.title)
+                        MovieListItemView(item: movie)
                     }
                 }
             } footer: {
                 Spinner(isAnimating: .constant(viewModel.state.isLoading))
                     .xCentered()
             }
+            .listRowSeparator(.hidden)
         }
+        .listStyle(.plain)
     }
     
     func placeholderView(title: String = "Error", message: String) -> some View {

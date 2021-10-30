@@ -17,6 +17,8 @@
 		0299377A272C506F0021EB6B /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02993779272C506F0021EB6B /* PlaceholderView.swift */; };
 		02D3F530272D5D410070EF5E /* View+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D3F52F272D5D410070EF5E /* View+Helpers.swift */; };
 		02D3F535272D7A450070EF5E /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D3F534272D7A450070EF5E /* Spinner.swift */; };
+		02D3F53D272D96280070EF5E /* MovieListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D3F53C272D96280070EF5E /* MovieListItemView.swift */; };
+		02D3F53F272D97660070EF5E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D3F53E272D97660070EF5E /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		02993779272C506F0021EB6B /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
 		02D3F52F272D5D410070EF5E /* View+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Helpers.swift"; sourceTree = "<group>"; };
 		02D3F534272D7A450070EF5E /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		02D3F53C272D96280070EF5E /* MovieListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListItemView.swift; sourceTree = "<group>"; };
+		02D3F53E272D97660070EF5E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 		02D3F533272D7A320070EF5E /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				02D3F53E272D97660070EF5E /* CardView.swift */,
 				02993779272C506F0021EB6B /* PlaceholderView.swift */,
 				02D3F534272D7A450070EF5E /* Spinner.swift */,
 			);
@@ -153,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				02993777272C4ABB0021EB6B /* MoviesListView.swift */,
+				02D3F53C272D96280070EF5E /* MovieListItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -238,6 +244,8 @@
 				02993776272C49BE0021EB6B /* MovieListItem.swift in Sources */,
 				02D3F535272D7A450070EF5E /* Spinner.swift in Sources */,
 				02993763272C3C5C0021EB6B /* ModernMVVMDemoApp.swift in Sources */,
+				02D3F53D272D96280070EF5E /* MovieListItemView.swift in Sources */,
+				02D3F53F272D97660070EF5E /* CardView.swift in Sources */,
 				02993778272C4ABB0021EB6B /* MoviesListView.swift in Sources */,
 				02993772272C3CB50021EB6B /* Feedback.swift in Sources */,
 				0299377A272C506F0021EB6B /* PlaceholderView.swift in Sources */,
