@@ -89,7 +89,7 @@ private extension MoviesListViewModel {
                 return Empty().eraseToAnyPublisher()
             }
             
-            return ListItem.preview
+            return MovieListItem.preview
                 .map { Event.onMoviesLoaded($0) }
                 .catch { Just(Event.onFailedToLoadMovies($0)) }
                 .eraseToAnyPublisher()
@@ -110,7 +110,7 @@ extension MoviesListViewModel {
     enum State {
         case idle
         case loading
-        case loaded([ListItem])
+        case loaded([MovieListItem])
         case error(Error)
         case empty
         
@@ -127,7 +127,7 @@ extension MoviesListViewModel {
         case onAppear
         case onReload
         case onSelectMovie(Int)
-        case onMoviesLoaded([ListItem])
+        case onMoviesLoaded([MovieListItem])
         case onFailedToLoadMovies(Error)
     }
 }

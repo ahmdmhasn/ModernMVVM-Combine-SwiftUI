@@ -43,7 +43,7 @@ private extension MoviesListView {
         }
     }
     
-    func list(of movies: [ListItem]) -> some View {
+    func list(of movies: [MovieListItem]) -> some View {
         List {
             Section {
                 ForEach(movies) { movie in
